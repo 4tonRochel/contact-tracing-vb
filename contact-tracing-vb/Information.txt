@@ -1,0 +1,10 @@
+﻿INFORMATION
+First Name:Rochel
+Last Name:Furton
+Complete Address:Quezon City
+Age:23
+Phone Number:09123456789
+Gender: Female
+Have you come into contact with a person who has a confirmed or suspected case of COVID-19 within the past 14 days? No
+Are you experiencing any of the following?: No Symptoms
+

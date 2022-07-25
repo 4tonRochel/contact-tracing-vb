@@ -1,7 +1,16 @@
-﻿Public Class Form1
+﻿Imports WebCam_Capture
+Imports MessagingToolkit
+Imports MessagingToolkit.Barcode
+Imports MessagingToolkit.QRCode.Codec
+Imports QRCoder
+Imports System.IO
 
+Public Class Form1
+    Dim Decode As QRCodeDecoder
     Dim gender As String
     Dim Q1 As String
+    WithEvents Mycam As WebCamCapture
+
     Private Sub txtbxFName_TextChanged(sender As Object, e As EventArgs) Handles txtbxFName.TextChanged
 
     End Sub
@@ -20,50 +29,18 @@
         writefile.WriteLine("Complete Address:" + txtbxAddress.Text)
         writefile.WriteLine("Age:" + txtbxAge.Text)
         writefile.WriteLine("Phone Number:" + txtbxPNum.Text)
-        If radiobtnMale.Checked Then
-            writefile.WriteLine(lblGender.Text & " " & "Male")
-        ElseIf radiobtnFemale.Checked Then
-            writefile.WriteLine(lblGender.Text & " " & "Female")
-        ElseIf radiobtnOther.Checked Then
-            writefile.WriteLine(lblGender.Text & " " & "Prefer not to say")
-        End If
+        writefile.WriteLine("Gender:" + cbxGender.Text)
+        writefile.WriteLine("Question 1:" + cbxQ1.Text)
+        writefile.WriteLine("Question 2:" + checklistQ2.Text)
 
 
-        If radiobtnYes.Checked Then
-            writefile.WriteLine(grpbxQ1.Text & " " & radiobtnYes.Text)
-        ElseIf radiobtnNo.Checked Then
-            writefile.WriteLine(grpbxQ1.Text & " " & radiobtnNo.Text)
-        End If
 
 
-        If chbxCough.CheckState = CheckState.Checked Then
-            writefile.WriteLine("Are you experiencing any of the following?: New and persistent cough")
-        Else
-            'Do Nothing
-        End If
-        If chbxBreathing.CheckState = CheckState.Checked Then
-            writefile.WriteLine("Are you experiencing any of the following? : Shorthness of breath or any difficulty braething")
-        Else
-            'Do Nothing
-        End If
-        If chbxFever.CheckState = CheckState.Checked Then
-            writefile.WriteLine("Are you experiencing any of the following?: Fever")
-        Else
-            'Do Nothing
-        End If
-        If chbxNoSymptoms.CheckState = CheckState.Checked Then
-            writefile.WriteLine("Are you experiencing any of the following?: No Symptoms")
-        Else
-            'Do Nothing
-        End If
 
 
         writefile.WriteLine("")
 
-        chbxCough.Checked = False
-        chbxBreathing.Checked = False
-        chbxFever.Checked = False
-        chbxNoSymptoms.Checked = False
+
 
 
         MessageBox.Show("Submitted!", "CONTACT TRACING FORM")
@@ -75,4 +52,62 @@
     Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnExit.Click
         Application.Exit()
     End Sub
+
+    Private Sub btnGenerate_Click(sender As Object, e As EventArgs) Handles btnGenerate.Click
+        TextBox2.Text = "Full Name:" + txtbxLName.Text + "" + txtbxFName.Text + "" & vbCrLf &
+            "Age: " + txtbxAge.Text & vbCrLf &
+            "Address: " + txtbxAddress.Text & vbCrLf &
+            "Gender: " + cbxGender.Text & vbCrLf &
+            "Phone Number: " + txtbxPNum.Text & vbCrLf &
+            "Question 1: " + cbxQ1.Text & vbCrLf &
+            "Question 2: " + checklistQ2.Text & vbCrLf
+
+        Dim GenQR As New QRCodeGenerator
+        Dim Info = GenQR.CreateQrCode(TextBox2.Text, QRCodeGenerator.ECCLevel.Q)
+        Dim Code As New QRCode(Info)
+        PictureBox.Image = Code.GetGraphic(3)
+
+    End Sub
+
+    Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
+        Dim SaveQR As New SaveFileDialog
+        SaveQR.FileName = "QR Code"
+        SaveQR.Filter = "Png Files Only (*.png) |*.png"
+        If SaveQR.ShowDialog() = Windows.Forms.DialogResult.OK Then
+            Try
+                PictureBox.Image.Save(SaveQR.FileName, System.Drawing.Imaging.ImageFormat.Png)
+                MessageBox.Show("Saved!")
+            Catch ex As Exception
+
+            End Try
+        End If
+    End Sub
+
+    Private Sub btnScan_Click(sender As Object, e As EventArgs) Handles btnScan.Click
+        Try
+
+            StopWebCam()
+            Mycam = New WebCamCapture
+            Mycam.Start(0)
+
+
+        Catch ex As Exception
+
+        End Try
+    End Sub
+    Private Sub StopWebCam()
+        Try
+
+        Catch ex As Exception
+
+        End Try
+    End Sub
+    Private Sub StartWebCam()
+        StartWebCam()
+    End Sub
+    Private Sub Mycam_ImageCaptured(source As Object, e As WebcamEventArgs) Handles Mycam.ImageCaptured
+        PictureBox.Image = e.WebCamImage
+
+    End Sub
+
 End Class

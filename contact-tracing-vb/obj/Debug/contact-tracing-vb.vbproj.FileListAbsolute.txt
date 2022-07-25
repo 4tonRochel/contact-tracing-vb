@@ -10,3 +10,5 @@ C:\Users\SherylMejia\Documents\contact tracing\contact-tracing-vb\contact-tracin
 C:\Users\SherylMejia\Documents\contact tracing\contact-tracing-vb\contact-tracing-vb\obj\Debug\contact-tracing-vb.exe
 C:\Users\SherylMejia\Documents\contact tracing\contact-tracing-vb\contact-tracing-vb\obj\Debug\contact-tracing-vb.xml
 C:\Users\SherylMejia\Documents\contact tracing\contact-tracing-vb\contact-tracing-vb\obj\Debug\contact-tracing-vb.pdb
+C:\Users\SherylMejia\Documents\contact tracing\contact-tracing-vb\contact-tracing-vb\bin\Debug\MessagingToolkit.QRCode.dll
+C:\Users\SherylMejia\Documents\contact tracing\contact-tracing-vb\contact-tracing-vb\bin\Debug\QRCoder.dll

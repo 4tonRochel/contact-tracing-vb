@@ -22,6 +22,7 @@ Partial Class Form1
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.lblFName = New System.Windows.Forms.Label()
         Me.txtbxFName = New System.Windows.Forms.TextBox()
@@ -34,29 +35,32 @@ Partial Class Form1
         Me.txtbxPNum = New System.Windows.Forms.TextBox()
         Me.lblPNum = New System.Windows.Forms.Label()
         Me.lblGender = New System.Windows.Forms.Label()
-        Me.radiobtnMale = New System.Windows.Forms.RadioButton()
-        Me.radiobtnFemale = New System.Windows.Forms.RadioButton()
-        Me.radiobtnOther = New System.Windows.Forms.RadioButton()
         Me.grpbxQ1 = New System.Windows.Forms.GroupBox()
-        Me.radiobtnYes = New System.Windows.Forms.RadioButton()
-        Me.radiobtnNo = New System.Windows.Forms.RadioButton()
+        Me.cbxQ1 = New System.Windows.Forms.ComboBox()
         Me.lblQ2 = New System.Windows.Forms.Label()
-        Me.chbxCough = New System.Windows.Forms.CheckBox()
-        Me.chbxBreathing = New System.Windows.Forms.CheckBox()
-        Me.chbxFever = New System.Windows.Forms.CheckBox()
-        Me.chbxNoSymptoms = New System.Windows.Forms.CheckBox()
         Me.btnSubmit = New System.Windows.Forms.Button()
         Me.btnExit = New System.Windows.Forms.Button()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.PictureBox = New System.Windows.Forms.PictureBox()
+        Me.btnGenerate = New System.Windows.Forms.Button()
+        Me.btnSave = New System.Windows.Forms.Button()
+        Me.btnCapture = New System.Windows.Forms.Button()
+        Me.btnScan = New System.Windows.Forms.Button()
+        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.cbxGender = New System.Windows.Forms.ComboBox()
+        Me.checklistQ2 = New System.Windows.Forms.CheckedListBox()
         Me.grpbxQ1.SuspendLayout()
+        CType(Me.PictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.BackColor = System.Drawing.Color.LightSkyBlue
+        Me.Label1.BackColor = System.Drawing.Color.PowderBlue
         Me.Label1.Font = New System.Drawing.Font("Times New Roman", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label1.Location = New System.Drawing.Point(130, 9)
+        Me.Label1.Location = New System.Drawing.Point(405, 9)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(209, 24)
         Me.Label1.TabIndex = 0
@@ -162,46 +166,9 @@ Partial Class Form1
         Me.lblGender.TabIndex = 11
         Me.lblGender.Text = "Gender:"
         '
-        'radiobtnMale
-        '
-        Me.radiobtnMale.AutoSize = True
-        Me.radiobtnMale.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.radiobtnMale.Location = New System.Drawing.Point(30, 208)
-        Me.radiobtnMale.Name = "radiobtnMale"
-        Me.radiobtnMale.Size = New System.Drawing.Size(56, 21)
-        Me.radiobtnMale.TabIndex = 12
-        Me.radiobtnMale.TabStop = True
-        Me.radiobtnMale.Text = "Male"
-        Me.radiobtnMale.UseVisualStyleBackColor = True
-        '
-        'radiobtnFemale
-        '
-        Me.radiobtnFemale.AutoSize = True
-        Me.radiobtnFemale.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.radiobtnFemale.Location = New System.Drawing.Point(30, 231)
-        Me.radiobtnFemale.Name = "radiobtnFemale"
-        Me.radiobtnFemale.Size = New System.Drawing.Size(69, 21)
-        Me.radiobtnFemale.TabIndex = 13
-        Me.radiobtnFemale.TabStop = True
-        Me.radiobtnFemale.Text = "Female"
-        Me.radiobtnFemale.UseVisualStyleBackColor = True
-        '
-        'radiobtnOther
-        '
-        Me.radiobtnOther.AutoSize = True
-        Me.radiobtnOther.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.radiobtnOther.Location = New System.Drawing.Point(30, 254)
-        Me.radiobtnOther.Name = "radiobtnOther"
-        Me.radiobtnOther.Size = New System.Drawing.Size(125, 21)
-        Me.radiobtnOther.TabIndex = 14
-        Me.radiobtnOther.TabStop = True
-        Me.radiobtnOther.Text = "Prefer not to say"
-        Me.radiobtnOther.UseVisualStyleBackColor = True
-        '
         'grpbxQ1
         '
-        Me.grpbxQ1.Controls.Add(Me.radiobtnNo)
-        Me.grpbxQ1.Controls.Add(Me.radiobtnYes)
+        Me.grpbxQ1.Controls.Add(Me.cbxQ1)
         Me.grpbxQ1.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.grpbxQ1.Location = New System.Drawing.Point(16, 301)
         Me.grpbxQ1.Name = "grpbxQ1"
@@ -211,29 +178,14 @@ Partial Class Form1
         Me.grpbxQ1.Text = "Have you come into contact with a person who has a confirmed or suspected case of" &
     " COVID-19 within the past 14 days?"
         '
-        'radiobtnYes
+        'cbxQ1
         '
-        Me.radiobtnYes.AutoSize = True
-        Me.radiobtnYes.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.radiobtnYes.Location = New System.Drawing.Point(6, 61)
-        Me.radiobtnYes.Name = "radiobtnYes"
-        Me.radiobtnYes.Size = New System.Drawing.Size(49, 23)
-        Me.radiobtnYes.TabIndex = 0
-        Me.radiobtnYes.TabStop = True
-        Me.radiobtnYes.Text = "Yes"
-        Me.radiobtnYes.UseVisualStyleBackColor = True
-        '
-        'radiobtnNo
-        '
-        Me.radiobtnNo.AutoSize = True
-        Me.radiobtnNo.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.radiobtnNo.Location = New System.Drawing.Point(105, 61)
-        Me.radiobtnNo.Name = "radiobtnNo"
-        Me.radiobtnNo.Size = New System.Drawing.Size(47, 23)
-        Me.radiobtnNo.TabIndex = 1
-        Me.radiobtnNo.TabStop = True
-        Me.radiobtnNo.Text = "No"
-        Me.radiobtnNo.UseVisualStyleBackColor = True
+        Me.cbxQ1.FormattingEnabled = True
+        Me.cbxQ1.Items.AddRange(New Object() {"Yes", "No"})
+        Me.cbxQ1.Location = New System.Drawing.Point(6, 53)
+        Me.cbxQ1.Name = "cbxQ1"
+        Me.cbxQ1.Size = New System.Drawing.Size(121, 27)
+        Me.cbxQ1.TabIndex = 32
         '
         'lblQ2
         '
@@ -245,56 +197,12 @@ Partial Class Form1
         Me.lblQ2.TabIndex = 16
         Me.lblQ2.Text = "Are you experiencing any of the following?"
         '
-        'chbxCough
-        '
-        Me.chbxCough.AutoSize = True
-        Me.chbxCough.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.chbxCough.Location = New System.Drawing.Point(22, 451)
-        Me.chbxCough.Name = "chbxCough"
-        Me.chbxCough.Size = New System.Drawing.Size(180, 21)
-        Me.chbxCough.TabIndex = 17
-        Me.chbxCough.Text = "New and persistent cough"
-        Me.chbxCough.UseVisualStyleBackColor = True
-        '
-        'chbxBreathing
-        '
-        Me.chbxBreathing.AutoSize = True
-        Me.chbxBreathing.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.chbxBreathing.Location = New System.Drawing.Point(22, 478)
-        Me.chbxBreathing.Name = "chbxBreathing"
-        Me.chbxBreathing.Size = New System.Drawing.Size(302, 21)
-        Me.chbxBreathing.TabIndex = 18
-        Me.chbxBreathing.Text = "Shorthness of breath or any difficulty braething"
-        Me.chbxBreathing.UseVisualStyleBackColor = True
-        '
-        'chbxFever
-        '
-        Me.chbxFever.AutoSize = True
-        Me.chbxFever.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.chbxFever.Location = New System.Drawing.Point(22, 505)
-        Me.chbxFever.Name = "chbxFever"
-        Me.chbxFever.Size = New System.Drawing.Size(61, 21)
-        Me.chbxFever.TabIndex = 19
-        Me.chbxFever.Text = "Fever"
-        Me.chbxFever.UseVisualStyleBackColor = True
-        '
-        'chbxNoSymptoms
-        '
-        Me.chbxNoSymptoms.AutoSize = True
-        Me.chbxNoSymptoms.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.chbxNoSymptoms.Location = New System.Drawing.Point(22, 532)
-        Me.chbxNoSymptoms.Name = "chbxNoSymptoms"
-        Me.chbxNoSymptoms.Size = New System.Drawing.Size(110, 21)
-        Me.chbxNoSymptoms.TabIndex = 20
-        Me.chbxNoSymptoms.Text = "No Symptoms"
-        Me.chbxNoSymptoms.UseVisualStyleBackColor = True
-        '
         'btnSubmit
         '
         Me.btnSubmit.BackColor = System.Drawing.Color.LightSkyBlue
         Me.btnSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSubmit.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSubmit.Location = New System.Drawing.Point(17, 571)
+        Me.btnSubmit.Location = New System.Drawing.Point(505, 571)
         Me.btnSubmit.Name = "btnSubmit"
         Me.btnSubmit.Size = New System.Drawing.Size(109, 34)
         Me.btnSubmit.TabIndex = 21
@@ -306,29 +214,126 @@ Partial Class Form1
         Me.btnExit.BackColor = System.Drawing.Color.LightSkyBlue
         Me.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnExit.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnExit.Location = New System.Drawing.Point(368, 571)
+        Me.btnExit.Location = New System.Drawing.Point(870, 571)
         Me.btnExit.Name = "btnExit"
         Me.btnExit.Size = New System.Drawing.Size(92, 34)
         Me.btnExit.TabIndex = 22
         Me.btnExit.Text = "Exit"
         Me.btnExit.UseVisualStyleBackColor = False
         '
+        'TextBox1
+        '
+        Me.TextBox1.Location = New System.Drawing.Point(505, 271)
+        Me.TextBox1.Multiline = True
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(457, 282)
+        Me.TextBox1.TabIndex = 23
+        '
+        'ContextMenuStrip1
+        '
+        Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(61, 4)
+        '
+        'PictureBox
+        '
+        Me.PictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.PictureBox.Location = New System.Drawing.Point(651, 104)
+        Me.PictureBox.Name = "PictureBox"
+        Me.PictureBox.Size = New System.Drawing.Size(165, 161)
+        Me.PictureBox.TabIndex = 25
+        Me.PictureBox.TabStop = False
+        '
+        'btnGenerate
+        '
+        Me.btnGenerate.BackColor = System.Drawing.Color.SkyBlue
+        Me.btnGenerate.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnGenerate.Location = New System.Drawing.Point(505, 57)
+        Me.btnGenerate.Name = "btnGenerate"
+        Me.btnGenerate.Size = New System.Drawing.Size(110, 41)
+        Me.btnGenerate.TabIndex = 26
+        Me.btnGenerate.Text = "Generate QR"
+        Me.btnGenerate.UseVisualStyleBackColor = False
+        '
+        'btnSave
+        '
+        Me.btnSave.BackColor = System.Drawing.Color.SkyBlue
+        Me.btnSave.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSave.Location = New System.Drawing.Point(621, 56)
+        Me.btnSave.Name = "btnSave"
+        Me.btnSave.Size = New System.Drawing.Size(109, 41)
+        Me.btnSave.TabIndex = 27
+        Me.btnSave.Text = "Save QR"
+        Me.btnSave.UseVisualStyleBackColor = False
+        '
+        'btnCapture
+        '
+        Me.btnCapture.BackColor = System.Drawing.Color.SkyBlue
+        Me.btnCapture.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCapture.Location = New System.Drawing.Point(852, 57)
+        Me.btnCapture.Name = "btnCapture"
+        Me.btnCapture.Size = New System.Drawing.Size(110, 41)
+        Me.btnCapture.TabIndex = 29
+        Me.btnCapture.Text = "Capture"
+        Me.btnCapture.UseVisualStyleBackColor = False
+        '
+        'btnScan
+        '
+        Me.btnScan.BackColor = System.Drawing.Color.SkyBlue
+        Me.btnScan.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnScan.Location = New System.Drawing.Point(736, 57)
+        Me.btnScan.Name = "btnScan"
+        Me.btnScan.Size = New System.Drawing.Size(110, 41)
+        Me.btnScan.TabIndex = 28
+        Me.btnScan.Text = "Scan QR"
+        Me.btnScan.UseVisualStyleBackColor = False
+        '
+        'TextBox2
+        '
+        Me.TextBox2.Location = New System.Drawing.Point(862, 9)
+        Me.TextBox2.Name = "TextBox2"
+        Me.TextBox2.Size = New System.Drawing.Size(100, 20)
+        Me.TextBox2.TabIndex = 30
+        Me.TextBox2.Visible = False
+        '
+        'cbxGender
+        '
+        Me.cbxGender.FormattingEnabled = True
+        Me.cbxGender.Items.AddRange(New Object() {"Male", "Female", "Prefer not to say"})
+        Me.cbxGender.Location = New System.Drawing.Point(16, 212)
+        Me.cbxGender.Name = "cbxGender"
+        Me.cbxGender.Size = New System.Drawing.Size(121, 21)
+        Me.cbxGender.TabIndex = 31
+        '
+        'checklistQ2
+        '
+        Me.checklistQ2.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.checklistQ2.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.checklistQ2.FormattingEnabled = True
+        Me.checklistQ2.Items.AddRange(New Object() {"New and Persistent cough", "Shortness of breath or any difficulty breathing", "Fever", "No Symptoms"})
+        Me.checklistQ2.Location = New System.Drawing.Point(23, 449)
+        Me.checklistQ2.Name = "checklistQ2"
+        Me.checklistQ2.Size = New System.Drawing.Size(432, 84)
+        Me.checklistQ2.TabIndex = 34
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(472, 617)
+        Me.AutoScroll = True
+        Me.ClientSize = New System.Drawing.Size(968, 617)
+        Me.Controls.Add(Me.checklistQ2)
+        Me.Controls.Add(Me.cbxGender)
+        Me.Controls.Add(Me.TextBox2)
+        Me.Controls.Add(Me.btnCapture)
+        Me.Controls.Add(Me.btnScan)
+        Me.Controls.Add(Me.btnSave)
+        Me.Controls.Add(Me.btnGenerate)
+        Me.Controls.Add(Me.PictureBox)
+        Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.btnExit)
         Me.Controls.Add(Me.btnSubmit)
-        Me.Controls.Add(Me.chbxNoSymptoms)
-        Me.Controls.Add(Me.chbxFever)
-        Me.Controls.Add(Me.chbxBreathing)
-        Me.Controls.Add(Me.chbxCough)
         Me.Controls.Add(Me.lblQ2)
         Me.Controls.Add(Me.grpbxQ1)
-        Me.Controls.Add(Me.radiobtnOther)
-        Me.Controls.Add(Me.radiobtnFemale)
-        Me.Controls.Add(Me.radiobtnMale)
         Me.Controls.Add(Me.lblGender)
         Me.Controls.Add(Me.txtbxPNum)
         Me.Controls.Add(Me.lblPNum)
@@ -341,10 +346,11 @@ Partial Class Form1
         Me.Controls.Add(Me.txtbxFName)
         Me.Controls.Add(Me.lblFName)
         Me.Controls.Add(Me.Label1)
+        Me.MaximizeBox = False
         Me.Name = "Form1"
         Me.Text = "Contact Tracing"
         Me.grpbxQ1.ResumeLayout(False)
-        Me.grpbxQ1.PerformLayout()
+        CType(Me.PictureBox, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -362,17 +368,19 @@ Partial Class Form1
     Friend WithEvents txtbxPNum As TextBox
     Friend WithEvents lblPNum As Label
     Friend WithEvents lblGender As Label
-    Friend WithEvents radiobtnMale As RadioButton
-    Friend WithEvents radiobtnFemale As RadioButton
-    Friend WithEvents radiobtnOther As RadioButton
     Friend WithEvents grpbxQ1 As GroupBox
-    Friend WithEvents radiobtnNo As RadioButton
-    Friend WithEvents radiobtnYes As RadioButton
     Friend WithEvents lblQ2 As Label
-    Friend WithEvents chbxCough As CheckBox
-    Friend WithEvents chbxBreathing As CheckBox
-    Friend WithEvents chbxFever As CheckBox
-    Friend WithEvents chbxNoSymptoms As CheckBox
     Friend WithEvents btnSubmit As Button
     Friend WithEvents btnExit As Button
+    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents ContextMenuStrip1 As ContextMenuStrip
+    Friend WithEvents PictureBox As PictureBox
+    Friend WithEvents btnGenerate As Button
+    Friend WithEvents btnSave As Button
+    Friend WithEvents btnCapture As Button
+    Friend WithEvents btnScan As Button
+    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents cbxGender As ComboBox
+    Friend WithEvents cbxQ1 As ComboBox
+    Friend WithEvents checklistQ2 As CheckedListBox
 End Class
