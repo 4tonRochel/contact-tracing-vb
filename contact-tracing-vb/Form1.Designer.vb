@@ -38,11 +38,10 @@ Partial Class Form1
         Me.grpbxQ1 = New System.Windows.Forms.GroupBox()
         Me.cbxQ1 = New System.Windows.Forms.ComboBox()
         Me.lblQ2 = New System.Windows.Forms.Label()
-        Me.btnSubmit = New System.Windows.Forms.Button()
         Me.btnExit = New System.Windows.Forms.Button()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
-        Me.PictureBox = New System.Windows.Forms.PictureBox()
+        Me.pcbxGenerate = New System.Windows.Forms.PictureBox()
         Me.btnGenerate = New System.Windows.Forms.Button()
         Me.btnSave = New System.Windows.Forms.Button()
         Me.btnCapture = New System.Windows.Forms.Button()
@@ -50,8 +49,10 @@ Partial Class Form1
         Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.cbxGender = New System.Windows.Forms.ComboBox()
         Me.checklistQ2 = New System.Windows.Forms.CheckedListBox()
+        Me.pcbxScan = New System.Windows.Forms.PictureBox()
         Me.grpbxQ1.SuspendLayout()
-        CType(Me.PictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pcbxGenerate, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pcbxScan, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -180,6 +181,7 @@ Partial Class Form1
         '
         'cbxQ1
         '
+        Me.cbxQ1.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbxQ1.FormattingEnabled = True
         Me.cbxQ1.Items.AddRange(New Object() {"Yes", "No"})
         Me.cbxQ1.Location = New System.Drawing.Point(6, 53)
@@ -197,18 +199,6 @@ Partial Class Form1
         Me.lblQ2.TabIndex = 16
         Me.lblQ2.Text = "Are you experiencing any of the following?"
         '
-        'btnSubmit
-        '
-        Me.btnSubmit.BackColor = System.Drawing.Color.LightSkyBlue
-        Me.btnSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnSubmit.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSubmit.Location = New System.Drawing.Point(505, 571)
-        Me.btnSubmit.Name = "btnSubmit"
-        Me.btnSubmit.Size = New System.Drawing.Size(109, 34)
-        Me.btnSubmit.TabIndex = 21
-        Me.btnSubmit.Text = "Submit"
-        Me.btnSubmit.UseVisualStyleBackColor = False
-        '
         'btnExit
         '
         Me.btnExit.BackColor = System.Drawing.Color.LightSkyBlue
@@ -223,10 +213,10 @@ Partial Class Form1
         '
         'TextBox1
         '
-        Me.TextBox1.Location = New System.Drawing.Point(505, 271)
+        Me.TextBox1.Location = New System.Drawing.Point(505, 301)
         Me.TextBox1.Multiline = True
         Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(457, 282)
+        Me.TextBox1.Size = New System.Drawing.Size(457, 252)
         Me.TextBox1.TabIndex = 23
         '
         'ContextMenuStrip1
@@ -234,20 +224,19 @@ Partial Class Form1
         Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
         Me.ContextMenuStrip1.Size = New System.Drawing.Size(61, 4)
         '
-        'PictureBox
+        'pcbxGenerate
         '
-        Me.PictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.PictureBox.Location = New System.Drawing.Point(651, 104)
-        Me.PictureBox.Name = "PictureBox"
-        Me.PictureBox.Size = New System.Drawing.Size(165, 161)
-        Me.PictureBox.TabIndex = 25
-        Me.PictureBox.TabStop = False
+        Me.pcbxGenerate.Location = New System.Drawing.Point(516, 43)
+        Me.pcbxGenerate.Name = "pcbxGenerate"
+        Me.pcbxGenerate.Size = New System.Drawing.Size(195, 191)
+        Me.pcbxGenerate.TabIndex = 25
+        Me.pcbxGenerate.TabStop = False
         '
         'btnGenerate
         '
         Me.btnGenerate.BackColor = System.Drawing.Color.SkyBlue
         Me.btnGenerate.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnGenerate.Location = New System.Drawing.Point(505, 57)
+        Me.btnGenerate.Location = New System.Drawing.Point(505, 238)
         Me.btnGenerate.Name = "btnGenerate"
         Me.btnGenerate.Size = New System.Drawing.Size(110, 41)
         Me.btnGenerate.TabIndex = 26
@@ -258,7 +247,7 @@ Partial Class Form1
         '
         Me.btnSave.BackColor = System.Drawing.Color.SkyBlue
         Me.btnSave.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSave.Location = New System.Drawing.Point(621, 56)
+        Me.btnSave.Location = New System.Drawing.Point(621, 237)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(109, 41)
         Me.btnSave.TabIndex = 27
@@ -269,7 +258,7 @@ Partial Class Form1
         '
         Me.btnCapture.BackColor = System.Drawing.Color.SkyBlue
         Me.btnCapture.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCapture.Location = New System.Drawing.Point(852, 57)
+        Me.btnCapture.Location = New System.Drawing.Point(852, 238)
         Me.btnCapture.Name = "btnCapture"
         Me.btnCapture.Size = New System.Drawing.Size(110, 41)
         Me.btnCapture.TabIndex = 29
@@ -280,7 +269,7 @@ Partial Class Form1
         '
         Me.btnScan.BackColor = System.Drawing.Color.SkyBlue
         Me.btnScan.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnScan.Location = New System.Drawing.Point(736, 57)
+        Me.btnScan.Location = New System.Drawing.Point(736, 238)
         Me.btnScan.Name = "btnScan"
         Me.btnScan.Size = New System.Drawing.Size(110, 41)
         Me.btnScan.TabIndex = 28
@@ -297,11 +286,12 @@ Partial Class Form1
         '
         'cbxGender
         '
+        Me.cbxGender.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbxGender.FormattingEnabled = True
         Me.cbxGender.Items.AddRange(New Object() {"Male", "Female", "Prefer not to say"})
         Me.cbxGender.Location = New System.Drawing.Point(16, 212)
         Me.cbxGender.Name = "cbxGender"
-        Me.cbxGender.Size = New System.Drawing.Size(121, 21)
+        Me.cbxGender.Size = New System.Drawing.Size(121, 27)
         Me.cbxGender.TabIndex = 31
         '
         'checklistQ2
@@ -315,12 +305,21 @@ Partial Class Form1
         Me.checklistQ2.Size = New System.Drawing.Size(432, 84)
         Me.checklistQ2.TabIndex = 34
         '
+        'pcbxScan
+        '
+        Me.pcbxScan.Location = New System.Drawing.Point(748, 43)
+        Me.pcbxScan.Name = "pcbxScan"
+        Me.pcbxScan.Size = New System.Drawing.Size(195, 191)
+        Me.pcbxScan.TabIndex = 35
+        Me.pcbxScan.TabStop = False
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
         Me.ClientSize = New System.Drawing.Size(968, 617)
+        Me.Controls.Add(Me.pcbxScan)
         Me.Controls.Add(Me.checklistQ2)
         Me.Controls.Add(Me.cbxGender)
         Me.Controls.Add(Me.TextBox2)
@@ -328,10 +327,9 @@ Partial Class Form1
         Me.Controls.Add(Me.btnScan)
         Me.Controls.Add(Me.btnSave)
         Me.Controls.Add(Me.btnGenerate)
-        Me.Controls.Add(Me.PictureBox)
+        Me.Controls.Add(Me.pcbxGenerate)
         Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.btnExit)
-        Me.Controls.Add(Me.btnSubmit)
         Me.Controls.Add(Me.lblQ2)
         Me.Controls.Add(Me.grpbxQ1)
         Me.Controls.Add(Me.lblGender)
@@ -350,7 +348,8 @@ Partial Class Form1
         Me.Name = "Form1"
         Me.Text = "Contact Tracing"
         Me.grpbxQ1.ResumeLayout(False)
-        CType(Me.PictureBox, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pcbxGenerate, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pcbxScan, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -370,11 +369,10 @@ Partial Class Form1
     Friend WithEvents lblGender As Label
     Friend WithEvents grpbxQ1 As GroupBox
     Friend WithEvents lblQ2 As Label
-    Friend WithEvents btnSubmit As Button
     Friend WithEvents btnExit As Button
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents ContextMenuStrip1 As ContextMenuStrip
-    Friend WithEvents PictureBox As PictureBox
+    Friend WithEvents pcbxGenerate As PictureBox
     Friend WithEvents btnGenerate As Button
     Friend WithEvents btnSave As Button
     Friend WithEvents btnCapture As Button
@@ -383,4 +381,5 @@ Partial Class Form1
     Friend WithEvents cbxGender As ComboBox
     Friend WithEvents cbxQ1 As ComboBox
     Friend WithEvents checklistQ2 As CheckedListBox
+    Friend WithEvents pcbxScan As PictureBox
 End Class

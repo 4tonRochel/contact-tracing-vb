@@ -8,3 +8,13 @@ Gender: Female
 Have you come into contact with a person who has a confirmed or suspected case of COVID-19 within the past 14 days? No
 Are you experiencing any of the following?: No Symptoms
 
+INFORMATION
+First Name:furtn
+Last Name:
+Complete Address:
+Age:
+Phone Number:
+Gender:
+Question 1:
+Question 2:No Symptoms
+
