@@ -201,7 +201,7 @@ Partial Class Form1
         '
         'btnExit
         '
-        Me.btnExit.BackColor = System.Drawing.Color.LightSkyBlue
+        Me.btnExit.BackColor = System.Drawing.Color.Red
         Me.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnExit.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnExit.Location = New System.Drawing.Point(870, 571)
@@ -213,6 +213,7 @@ Partial Class Form1
         '
         'TextBox1
         '
+        Me.TextBox1.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBox1.Location = New System.Drawing.Point(505, 301)
         Me.TextBox1.Multiline = True
         Me.TextBox1.Name = "TextBox1"
@@ -226,7 +227,7 @@ Partial Class Form1
         '
         'pcbxGenerate
         '
-        Me.pcbxGenerate.Location = New System.Drawing.Point(516, 43)
+        Me.pcbxGenerate.Location = New System.Drawing.Point(518, 104)
         Me.pcbxGenerate.Name = "pcbxGenerate"
         Me.pcbxGenerate.Size = New System.Drawing.Size(195, 191)
         Me.pcbxGenerate.TabIndex = 25
@@ -236,7 +237,7 @@ Partial Class Form1
         '
         Me.btnGenerate.BackColor = System.Drawing.Color.SkyBlue
         Me.btnGenerate.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnGenerate.Location = New System.Drawing.Point(505, 238)
+        Me.btnGenerate.Location = New System.Drawing.Point(505, 57)
         Me.btnGenerate.Name = "btnGenerate"
         Me.btnGenerate.Size = New System.Drawing.Size(110, 41)
         Me.btnGenerate.TabIndex = 26
@@ -247,7 +248,7 @@ Partial Class Form1
         '
         Me.btnSave.BackColor = System.Drawing.Color.SkyBlue
         Me.btnSave.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSave.Location = New System.Drawing.Point(621, 237)
+        Me.btnSave.Location = New System.Drawing.Point(621, 57)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(109, 41)
         Me.btnSave.TabIndex = 27
@@ -256,9 +257,9 @@ Partial Class Form1
         '
         'btnCapture
         '
-        Me.btnCapture.BackColor = System.Drawing.Color.SkyBlue
+        Me.btnCapture.BackColor = System.Drawing.Color.DeepSkyBlue
         Me.btnCapture.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCapture.Location = New System.Drawing.Point(852, 238)
+        Me.btnCapture.Location = New System.Drawing.Point(851, 254)
         Me.btnCapture.Name = "btnCapture"
         Me.btnCapture.Size = New System.Drawing.Size(110, 41)
         Me.btnCapture.TabIndex = 29
@@ -267,9 +268,9 @@ Partial Class Form1
         '
         'btnScan
         '
-        Me.btnScan.BackColor = System.Drawing.Color.SkyBlue
+        Me.btnScan.BackColor = System.Drawing.Color.DeepSkyBlue
         Me.btnScan.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnScan.Location = New System.Drawing.Point(736, 238)
+        Me.btnScan.Location = New System.Drawing.Point(735, 254)
         Me.btnScan.Name = "btnScan"
         Me.btnScan.Size = New System.Drawing.Size(110, 41)
         Me.btnScan.TabIndex = 28
@@ -307,7 +308,7 @@ Partial Class Form1
         '
         'pcbxScan
         '
-        Me.pcbxScan.Location = New System.Drawing.Point(748, 43)
+        Me.pcbxScan.Location = New System.Drawing.Point(750, 57)
         Me.pcbxScan.Name = "pcbxScan"
         Me.pcbxScan.Size = New System.Drawing.Size(195, 191)
         Me.pcbxScan.TabIndex = 35
